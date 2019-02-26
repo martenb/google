@@ -34,6 +34,7 @@ Simple example how to use Google Login in Presenter
 namespace App\Presenters;
 
 use Google_Service_Oauth2;
+use InvalidArgumentException;
 use MartenB\Google\GoogleLogin;
 use Nette\Application\Responses\RedirectResponse;
 use Nette\Application\UI\Presenter;
@@ -69,7 +70,7 @@ final class SignPresenter extends Presenter
             $this->user->login('google', $this->googleLogin->getMe($token));
             $this->flashMessage('Login successful :-).', 'success');
 
-        } catch (AuthenticationException $e) {
+        } catch (InvalidArgumentException | AuthenticationException $e) {
             $this->flashMessage('Login failed. :-( Try again.', 'danger');
 
         }

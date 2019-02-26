@@ -5,6 +5,7 @@ namespace MartenB\Google;
 use Google_Client;
 use Google_Service_Oauth2;
 use Google_Service_Oauth2_Userinfoplus;
+use InvalidArgumentException;
 
 class GoogleLogin
 {
@@ -38,6 +39,7 @@ class GoogleLogin
 	 * @param string $redirectUri
 	 * @param string $authCode
 	 * @return array
+	 * @throws InvalidArgumentException
 	 */
 	public function getAccessToken(string $redirectUri, string $authCode): array
 	{
