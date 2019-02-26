@@ -1,0 +1,24 @@
+{
+	"name": "martenb/google",
+	"description": "Ultra easy-to-use Google login wrapper for [`Nette Framework`](https://github.com/nette/).",
+	"keywords": ["google", "login", "php", "sdk", "nette", "oauth2"],
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Martin Brettschneider"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"MartenB\\Google\\": "src/"
+		}
+	},
+	"require": {
+		"php": ">= 7.1",
+		"google/apiclient": "^2.2"
+	},
+	"require-dev": {
+		"nette/di": "^2.4.10"
+	}
+}
