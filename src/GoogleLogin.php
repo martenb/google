@@ -48,10 +48,10 @@ class GoogleLogin
 
 
 	/**
-	 * @param string $accessToken
+	 * @param array $accessToken
 	 * @return Google_Service_Oauth2_Userinfoplus
 	 */
-	public function getMe(string $accessToken): Google_Service_Oauth2_Userinfoplus
+	public function getMe(array $accessToken): Google_Service_Oauth2_Userinfoplus
 	{
 		$this->googleClient->setAccessToken($accessToken);
 
