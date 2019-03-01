@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MartenB\Google;
 
 use Google_Client;

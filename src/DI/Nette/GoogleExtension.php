@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MartenB\Google\DI\Nette;
 
 use MartenB\Google\GoogleFactory;

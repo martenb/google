@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MartenB\Google;
 
 use Google_Client;
@@ -23,13 +25,17 @@ class GoogleLogin
 	/**
 	 * @param string $redirectUri
 	 * @param string|array $scope
+	 * @param string|NULL $state
 	 * @return string
 	 */
-	public function getLoginUrl(string $redirectUri, $scope = Google_Service_Oauth2::USERINFO_PROFILE): string
+	public function getLoginUrl(string $redirectUri, $scope = Google_Service_Oauth2::USERINFO_PROFILE, ?string $state = NULL): string
 	{
 		$this->googleClient->setIncludeGrantedScopes(TRUE);
 		$this->googleClient->addScope($scope);
 		$this->googleClient->setRedirectUri($redirectUri);
+		if (isset($state)) {
+			$this->googleClient->setState($state);
+		}
 
 		return $this->googleClient->createAuthUrl();
 	}
