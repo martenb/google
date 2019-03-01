@@ -4,21 +4,42 @@
 	"keywords": ["google", "login", "php", "sdk", "nette", "oauth2"],
 	"type": "library",
 	"license": "MIT",
+	"homepage": "https://github.com/martenb/google",
 	"authors": [
 		{
 			"name": "Martin Brettschneider"
 		}
 	],
-	"autoload": {
-		"psr-4": {
-			"MartenB\\Google\\": "src/"
-		}
-	},
 	"require": {
 		"php": ">= 7.1",
 		"google/apiclient": "^2.2"
 	},
 	"require-dev": {
+		"ninjify/qa": "^0.8.0",
+		"ninjify/nunjuck": "^0.2.0",
 		"nette/di": "^2.4.10"
+	},
+	"autoload": {
+		"psr-4": {
+			"MartenB\\Google\\": "src/"
+		}
+	},
+	"scripts": {
+		"tests": [
+			"tester -s -p php --colors 1 -C tests/cases"
+		],
+		"coverage": [
+			"tester -s -p phpdbg --colors 1 -C --coverage ./coverage.xml --coverage-src ./src tests/cases"
+		],
+		"phpstan-install": [
+			"mkdir -p temp/phpstan",
+			"composer require -d temp/phpstan phpstan/phpstan:^0.10",
+			"composer require -d temp/phpstan phpstan/phpstan-deprecation-rules:^0.10",
+			"composer require -d temp/phpstan phpstan/phpstan-nette:^0.10",
+			"composer require -d temp/phpstan phpstan/phpstan-strict-rules:^0.10"
+		],
+		"phpstan": [
+			"temp/phpstan/vendor/bin/phpstan analyse -l max -c phpstan.neon src"
+		]
 	}
 }

@@ -13,7 +13,7 @@ use Nette\Utils\Validators;
 class GoogleExtension extends CompilerExtension
 {
 
-	/** @var string[] */
+	/** @var mixed[] */
 	private $defaults = [
 		'clientId' => NULL,
 		'clientSecret' => NULL,
