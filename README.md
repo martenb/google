@@ -2,6 +2,16 @@
 
 Inspired by https://github.com/contributte/facebook
 
+---
+
+[![Build Status](https://img.shields.io/travis/martenb/google.svg?style=flat-square)](https://travis-ci.org/martenb/google)
+[![Code coverage](https://img.shields.io/coveralls/martenb/google.svg?style=flat-square)](https://coveralls.io/r/martenb/google)
+[![Licence](https://img.shields.io/packagist/l/martenb/google.svg?style=flat-square)](https://packagist.org/packages/martenb/google)
+[![Downloads this Month](https://img.shields.io/packagist/dm/martenb/google.svg?style=flat-square)](https://packagist.org/packages/martenb/google)
+[![Downloads total](https://img.shields.io/packagist/dt/martenb/google.svg?style=flat-square)](https://packagist.org/packages/martenb/google)
+[![Latest stable](https://img.shields.io/packagist/v/martenb/google.svg?style=flat-square)](https://packagist.org/packages/martenb/google)
+[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+
 ## Content
 
 - [Requirements - what do you need](#requirements)
