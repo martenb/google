@@ -27,6 +27,7 @@ class GoogleLogin
 		$this->googleClient->setIncludeGrantedScopes(true);
 		$this->googleClient->addScope($scope);
 		$this->googleClient->setRedirectUri($redirectUri);
+
 		if (isset($state)) {
 			$this->googleClient->setState($state);
 		}
