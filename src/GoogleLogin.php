@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace MartenB\Google;
 
@@ -15,7 +13,6 @@ class GoogleLogin
 	/** @var Google_Client */
 	private $googleClient;
 
-
 	public function __construct(Google_Client $googleClient)
 	{
 		$this->googleClient = $googleClient;
@@ -23,14 +20,11 @@ class GoogleLogin
 
 
 	/**
-	 * @param string $redirectUri
-	 * @param string|array $scope
-	 * @param string|NULL $state
-	 * @return string
+	 * @param string|string[] $scope
 	 */
-	public function getLoginUrl(string $redirectUri, $scope = Google_Service_Oauth2::USERINFO_PROFILE, ?string $state = NULL): string
+	public function getLoginUrl(string $redirectUri, $scope = Google_Service_Oauth2::USERINFO_PROFILE, ?string $state = null): string
 	{
-		$this->googleClient->setIncludeGrantedScopes(TRUE);
+		$this->googleClient->setIncludeGrantedScopes(true);
 		$this->googleClient->addScope($scope);
 		$this->googleClient->setRedirectUri($redirectUri);
 		if (isset($state)) {
@@ -42,9 +36,7 @@ class GoogleLogin
 
 
 	/**
-	 * @param string $redirectUri
-	 * @param string $authCode
-	 * @return array
+	 * @return mixed[]
 	 * @throws InvalidArgumentException
 	 */
 	public function getAccessToken(string $redirectUri, string $authCode): array
@@ -56,8 +48,7 @@ class GoogleLogin
 
 
 	/**
-	 * @param array $accessToken
-	 * @return Google_Service_Oauth2_Userinfoplus
+	 * @param mixed[] $accessToken
 	 */
 	public function getMe(array $accessToken): Google_Service_Oauth2_Userinfoplus
 	{

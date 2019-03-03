@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace MartenB\Google;
 
@@ -12,7 +10,6 @@ class GoogleFactory
 	/** @var string[] */
 	private $config;
 
-
 	/**
 	 * @param string[] $config
 	 */
@@ -22,9 +19,6 @@ class GoogleFactory
 	}
 
 
-	/**
-	 * @return Google_Client
-	 */
 	public function create(): Google_Client
 	{
 		return new Google_Client($this->config);

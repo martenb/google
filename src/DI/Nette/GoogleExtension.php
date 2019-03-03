@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace MartenB\Google\DI\Nette;
 
@@ -15,10 +13,9 @@ class GoogleExtension extends CompilerExtension
 
 	/** @var mixed[] */
 	private $defaults = [
-		'clientId' => NULL,
-		'clientSecret' => NULL,
+		'clientId' => null,
+		'clientSecret' => null,
 	];
-
 
 	/**
 	 * @throws AssertionException
