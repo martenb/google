@@ -24,6 +24,5 @@ test(function (): void {
 	/** @var Container $container */
 	$container = new $class();
 
-	// Service created
 	Assert::type(GoogleLogin::class, $container->getService('google.login'));
 });
